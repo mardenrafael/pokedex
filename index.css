@@ -1,0 +1,72 @@
+/*
+Cor primaria: #42EB4C;
+            > #2ead37;
+            > #38ce42;
+
+Marrom: #EB5736;
+
+Roxo: #8A3C9E;
+    > #a04eb4;
+    > #733483;
+
+Branco: #d0fcd3;
+Preto: #010f01;
+
+*/
+
+:root {
+    --background_color: #2ead37;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    
+    background-color: #d0fcd3;
+    color: #733483;
+
+    
+}
+
+.header {
+    background-color: #38ce42;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+
+}
+
+.title {
+    font-weight: bold;
+    font-size: 4em;
+
+    padding: 1rem;
+}
+
+.card {
+    background-color: var(--background_color);
+
+    width: 25%;
+    height: 25rem;
+
+    padding: 1%;
+
+    border-radius: 5%;
+}
+
+
+.row {
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.main-section {
+    margin-top: 2rem;
+
+    width: 100%;
+}
