@@ -50,6 +50,9 @@ body {
 .card {
     background-color: var(--background_color);
 
+    display: grid;
+    grid-template-rows: 1fr 2fr 1.5fr;
+
     width: 25%;
     height: 25rem;
 
@@ -58,6 +61,35 @@ body {
     border-radius: 5%;
 }
 
+.header_card {
+    font-size: 2em;
+    font-weight: bolder;
+
+    text-align: center;
+
+    margin: 1rem 1rem 0;
+}
+
+.section_card {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin:  0 1em 0;
+}
+
+.footer_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 1em 1em
+}
+
+.pokemon_link {
+    text-decoration: none;
+}
 
 .row {
     display: flex;
