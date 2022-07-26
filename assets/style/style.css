@@ -52,17 +52,18 @@ body {
 
     display: grid;
     grid-template-rows: 1fr 2fr 1.5fr;
-
-    width: 25%;
-    height: 25rem;
+    
+    width: 50%;
+    height: 20rem;
 
     padding: 1%;
+    margin: 5% auto;
 
     border-radius: 5%;
 }
 
 .header_card {
-    font-size: 2em;
+    font-size: 110%;
     font-weight: bolder;
 
     text-align: center;
@@ -79,6 +80,14 @@ body {
     margin:  0 1em 0;
 }
 
+.card_img {
+    width: 10rem;
+
+    border-radius: 5%;
+    
+    background-color: #d0fcd3;
+}
+
 .footer_card {
     display: flex;
     justify-content: center;
@@ -92,13 +101,50 @@ body {
 }
 
 .row {
-    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .main-section {
     margin-top: 2rem;
 
     width: 100%;
+}
+
+.search-container {
+    margin: 2% auto;
+    padding: 1%;
+
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    width: 50%;
+    padding: 0.8%;
+    font-size: 120%;
+   
+    border: none;
+}
+
+#search:focus {
+    outline: none;
+}
+
+#search-btn {
+    width: 10%;
+    
+    border: none;
+    
+    background-color: #2ead37;
+    color: #733483;
+}
+
+#search-btn:hover {
+    background-color: #38ce42;
+    cursor: pointer;
 }
