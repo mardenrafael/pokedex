@@ -24,27 +24,23 @@ async function get_pokemon(pokemon_name) {
 
 //No momento em que o arquivo é carregado ele busca os primeiros 150 pokemons e os insere ele na pagina
 async function rend_pokemon_list() {
-    console.log("Start rend pokemon");
-
-    //apenas para saber quanto tempo em segundos leva a execução da função
-    const before = Date.now()
     
     //esse request busca uma lista dos primeiros 150 pokemons
+    const MAX_POKEMONS_IN_ROW = 3
     const POKEMONS_URL = BASE_URL + "pokemon?offset=0&limit=150"
     const response = await fetch(POKEMONS_URL)
     const pokemons_list = await response.json().then((resp) => {
         return resp.results
     })
-    console.log("Request was been send");
 
     // cria um array para armazenar pokemons selecionados aleatoriamente
     let pokemons_list_ref = []
 
-    for(let i = 0; i < 3; i++) {
+    //seleciona pokemons aleatorios dentro da lista de pokemons retornados da API
+    for(let i = 0; i < MAX_POKEMONS_IN_ROW; i++) {
         pokemons_list_ref.push(pokemons_list[Math.floor(Math.random() * pokemons_list.length)])
     }
 
-    console.log(pokemons_list_ref);
 
     //Busca os dados dos pokemons selecionados
     let pokemons_data = []
@@ -57,11 +53,6 @@ async function rend_pokemon_list() {
     for (let i = 0; i < pokemons_data.length; i++) {
         insert_pokemon_on_card(pokemons_data[i])
     }
-
-    const after = Date.now()
-    console.log(`Rend pokemon took ${(after - before) / 1000} sec`);
-    console.log(`Rend pokemon took ${(after - before)} milisec`);
-
 }
 
 
