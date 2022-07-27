@@ -1,10 +1,10 @@
 class Card {
-    // constructor() {
-    //     this.name = name
-    //     this.description = description
-    //     this.sprite = sprite
+    constructor(pokemon) {
+        this.name = pokemon.name
+        this.description = pokemon.description
+        this.sprite = pokemon.sprites.front_default
 
-    // }
+    }
 
     generate_card(pokemon_data) {
         //Cria a div principal e configura ela
@@ -15,7 +15,7 @@ class Card {
         const header = document.createElement("header")
         header.setAttribute("class", "header_card")
         
-        header.innerText = pokemon_data.name
+        header.innerText = `${pokemon_data.id}- ${pokemon_data.name.toUpperCase()}`
 
         //Cria a section principal e configura ela
         const section = document.createElement("section")
@@ -25,7 +25,7 @@ class Card {
         const img_element = document.createElement("img")
         img_element.setAttribute("src", pokemon_data.sprites.front_default)
         img_element.setAttribute("alt", pokemon_data.name)
-
+        img_element.setAttribute("class", "card_img")
 
         //Cria a footer principal e configura ela
         const footer = document.createElement("footer")
@@ -36,7 +36,7 @@ class Card {
         link_to_pokemon.setAttribute("target", "_blank")
         link_to_pokemon.setAttribute("href", "#")
 
-        link_to_pokemon.innerText = "Mais informaçoes"  
+        link_to_pokemon.innerText = "Mais informações"  
 
         footer.appendChild(link_to_pokemon)
 
