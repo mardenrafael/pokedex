@@ -15,7 +15,7 @@ Preto: #010f01;
 */
 
 :root {
-    --background_color: #2ead37;
+    --background_color: #0F3D3E;
 }
 
 
@@ -25,14 +25,14 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
     
-    background-color: #d0fcd3;
-    color: #733483;
+    background-color: #F1F1F1;
+    color: #E2DCC8;
 
     
 }
 
 .header {
-    background-color: #38ce42;
+    background-color: #0F3D3E;
     width: 100%;
     
     display: flex;
@@ -85,7 +85,7 @@ body {
 
     border-radius: 5%;
     
-    background-color: #d0fcd3;
+    background-color: #F1F1F1;
 }
 
 .footer_card {
@@ -97,6 +97,7 @@ body {
 }
 
 .pokemon_link {
+    color: #E2DCC8;
     text-decoration: none;
 }
 
@@ -140,11 +141,11 @@ body {
     
     border: none;
     
-    background-color: #2ead37;
-    color: #733483;
+    background-color: #0F3D3E;
+    color: #E2DCC8;
 }
 
 #search-btn:hover {
-    background-color: #38ce42;
+    background-color: #0F3D3E;
     cursor: pointer;
 }
