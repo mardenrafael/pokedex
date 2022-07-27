@@ -1,21 +1,7 @@
-/*
-Cor primaria: #42EB4C;
-            > #2ead37;
-            > #38ce42;
-
-Marrom: #EB5736;
-
-Roxo: #8A3C9E;
-    > #a04eb4;
-    > #733483;
-
-Branco: #d0fcd3;
-Preto: #010f01;
-
-*/
-
 :root {
-    --background_color: #0F3D3E;
+    --primary_color: #0F3D3E;
+    --secondary_color: #E2DCC8;
+    --terciary_color: #F1F1F1;
 }
 
 
