@@ -31,14 +31,16 @@ class Card {
         const footer = document.createElement("footer")
         footer.setAttribute("class", "footer_card")
 
-        const link_to_pokemon = document.createElement("a")
-        link_to_pokemon.setAttribute("class", "pokemon_link")
-        link_to_pokemon.setAttribute("target", "_blank")
-        link_to_pokemon.setAttribute("href", "#")
+        const more_info_button = document.createElement("button")
+        more_info_button.setAttribute("class", "more_info_btn")
 
-        link_to_pokemon.innerText = "Mais informações"  
+        more_info_button.innerText = `Mais informação sobre ${pokemon_data.name}`
+        // link_to_pokemon.setAttribute("target", "_blank")
+        // link_to_pokemon.setAttribute("href", "./assets/html/template.html")
 
-        footer.appendChild(link_to_pokemon)
+        // link_to_pokemon.innerText = "Mais informações"  
+
+        footer.appendChild(more_info_button)
 
         section.appendChild(img_element)
 

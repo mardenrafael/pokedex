@@ -46,7 +46,7 @@ async function rend_pokemon_list() {
     }
 
     //insere os pokemons buscados no html
-    for (let i = 0; i < pokemons_data.length; i++) {
+    for (let i = 0; i < 3; i++) {
         insert_pokemon_on_card(pokemons_data[i])
     }
 }

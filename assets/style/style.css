@@ -96,9 +96,32 @@ body {
     margin: 0 1em 1em
 }
 
-.pokemon_link {
+.more_info_btn {
+    background-color: #0F3D3E;
+    
     color: #E2DCC8;
-    text-decoration: none;
+
+    border: #E2DCC8 solid 0.2rem;
+    border-radius: 1rem .2rem 1rem .2rem;
+
+    padding: 0;
+
+    height: 75%;
+    width: 75%;
+
+    transition: 500ms;
+}
+
+.more_info_btn:hover {
+    transition-duration: 500ms;
+
+    border-radius: .2rem 1rem .2rem 1rem;
+}
+
+.more_info_btn:active {
+    transition-duration: 250ms;
+
+    border-radius: 2rem;
 }
 
 .row {
