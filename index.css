@@ -69,6 +69,8 @@ body {
 .card_img {
     width: 10rem;
 
+    margin: auto;
+
     border-radius: 5%;
     
     background-color: var(--terciary_color);
@@ -99,6 +101,8 @@ body {
 }
 
 .more_info_btn:hover {
+    cursor: pointer;
+
     transition-duration: 500ms;
 
     border-radius: .2rem 1rem .2rem 1rem;
