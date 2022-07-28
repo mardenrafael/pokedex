@@ -1,21 +1,7 @@
-/*
-Cor primaria: #42EB4C;
-            > #2ead37;
-            > #38ce42;
-
-Marrom: #EB5736;
-
-Roxo: #8A3C9E;
-    > #a04eb4;
-    > #733483;
-
-Branco: #d0fcd3;
-Preto: #010f01;
-
-*/
-
 :root {
-    --background_color: #0F3D3E;
+    --primary_color: #0F3D3E;
+    --secondary_color: #E2DCC8;
+    --terciary_color: #F1F1F1;
 }
 
 
@@ -25,14 +11,14 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
     
-    background-color: #F1F1F1;
-    color: #E2DCC8;
+    background-color: var(--terciary_color);
+    color: var(--secondary_color);
 
     
 }
 
 .header {
-    background-color: #0F3D3E;
+    background-color: var(--primary_color);
     width: 100%;
     
     display: flex;
@@ -48,7 +34,7 @@ body {
 }
 
 .card {
-    background-color: var(--background_color);
+    background-color: var(--primary_color);
 
     display: grid;
     grid-template-rows: 1fr 2fr 1.5fr;
@@ -85,7 +71,7 @@ body {
 
     border-radius: 5%;
     
-    background-color: #F1F1F1;
+    background-color: var(--terciary_color);
 }
 
 .footer_card {
@@ -164,11 +150,11 @@ body {
     
     border: none;
     
-    background-color: #0F3D3E;
-    color: #E2DCC8;
+    background-color: var(--primary_color);
+    color: var(--secondary_color);
 }
 
 #search-btn:hover {
-    background-color: #0F3D3E;
+    background-color: var(--primary_color);;
     cursor: pointer;
 }

@@ -15,7 +15,7 @@ class Card {
         const header = document.createElement("header")
         header.setAttribute("class", "header_card")
         
-        header.innerText = `${pokemon_data.id}- ${pokemon_data.name.toUpperCase()}`
+        header.innerText = `${pokemon_data.name.toUpperCase()}`
 
         //Cria a section principal e configura ela
         const section = document.createElement("section")
