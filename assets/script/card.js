@@ -1,10 +1,4 @@
 class Card {
-    constructor(pokemon) {
-        this.name = pokemon.name
-        this.description = pokemon.description
-        this.sprite = pokemon.sprites.front_default
-
-    }
 
     generate_card(pokemon_data) {
         //Cria a div principal e configura ela
