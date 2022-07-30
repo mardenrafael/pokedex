@@ -29,10 +29,9 @@ class Card {
         more_info_button.setAttribute("class", "more_info_btn")
 
         more_info_button.innerText = `Mais informação sobre ${pokemon_data.name}`
-        // link_to_pokemon.setAttribute("target", "_blank")
-        // link_to_pokemon.setAttribute("href", "./assets/html/template.html")
-
-        // link_to_pokemon.innerText = "Mais informações"  
+        more_info_button.addEventListener("click", () => {
+            console.log(pokemon_data.name);
+        })
 
         footer.appendChild(more_info_button)
 

@@ -2,8 +2,8 @@ const BASE_URL = "https://pokeapi.co/api/v2/"
 const pokemons_row = document.getElementById("pokemons_row")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
-const more_info = document.getElementsByClassName("more_info_btn")
-// // const card_generator = new Card
+// const more_info = document.getElementsByClassName("more_info_btn")
+
 
 // recebe o nome do pokemon como parametro, chama a função get_pokemon para fazer pesquisa
 // e o método generate_card para gerar o card e depois insere no html
@@ -70,8 +70,3 @@ search_btn.addEventListener("click", () => {
 })
 
 rend_pokemon_list()
-
-
-more_info.addEventListener("click", () => {
-    console.log('hi');
-})
