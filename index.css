@@ -59,6 +59,32 @@ body {
   border-radius: 1rem;
 }
 
+.header_info{
+  font-size: 130%;
+  font-weight: bolder;
+
+  text-align: center;
+
+  margin: 1rem 1rem;
+}
+
+.info_img{
+  width: 15rem;
+
+  margin: auto;
+
+  border-radius: 5%;
+
+  background-color: var(--terciary_color);
+}
+
+.section_info{
+  width: 15rem;
+  height: 20rem;
+
+  margin: 0 1em 0;
+}
+
 .header_card {
   font-size: 110%;
   font-weight: bolder;
