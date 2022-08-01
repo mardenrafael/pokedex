@@ -25,7 +25,7 @@ async function get_pokemon(pokemon_name) {
 
 //No momento em que o arquivo é carregado ele busca os primeiros 150 pokemons e os insere ele na pagina
 async function rend_pokemon_list() {
-    
+
     //esse request busca uma lista dos primeiros 150 pokemons
     const MAX_POKEMONS_IN_ROW = 3
     const POKEMONS_URL = BASE_URL + "pokemon?offset=0&limit=150"
@@ -38,7 +38,7 @@ async function rend_pokemon_list() {
     let pokemons_list_ref = []
 
     //seleciona pokemons aleatorios dentro da lista de pokemons retornados da API
-    for(let i = 0; i < MAX_POKEMONS_IN_ROW; i++) {
+    for (let i = 0; i < MAX_POKEMONS_IN_ROW; i++) {
         pokemons_list_ref.push(pokemons_list[Math.floor(Math.random() * pokemons_list.length)])
     }
 
@@ -46,7 +46,7 @@ async function rend_pokemon_list() {
     //Busca os dados dos pokemons selecionados
     let pokemons_data = []
 
-    for (let i = 0; i < pokemons_list_ref.length; i++){
+    for (let i = 0; i < pokemons_list_ref.length; i++) {
         pokemons_data.push(await get_pokemon(pokemons_list_ref[i].name))
     }
 

@@ -8,7 +8,7 @@ class Card {
         //Cria a header principal e configura ela
         const header = document.createElement("header")
         header.setAttribute("class", "header_card")
-        
+
         header.innerText = `${pokemon_data.name.toUpperCase()}`
 
         //Cria a section principal e configura ela
