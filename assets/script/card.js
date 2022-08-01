@@ -1,4 +1,4 @@
-class Card {
+class CardCreator {
 
     generate_card(pokemon_data) {
         //Cria a div principal e configura ela

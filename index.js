@@ -2,15 +2,16 @@ const BASE_URL = "https://pokeapi.co/api/v2/"
 const pokemons_row = document.getElementById("pokemons_row")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
-// const more_info = document.getElementsByClassName("more_info_btn")
+const Card = new CardCreator
+
 
 
 // recebe o nome do pokemon como parametro, chama a função get_pokemon para fazer pesquisa
 // e o método generate_card para gerar o card e depois insere no html
-async function search_pokemon(pokemon_name) {
+async function search_pokemon_and_insert_on_page(pokemon_name) {
     const pokemon_data = await get_pokemon(pokemon_name)
 
-    const search_card = new Card(pokemon_data).generate_card(pokemon_data)
+    const search_card = Card.generate_card(pokemon_data)
     pokemons_row.replaceChildren(search_card)
 }
 
@@ -59,14 +60,14 @@ async function rend_pokemon_list() {
 
 // recebe commo parametro o pokemon pesquisado e insere ele na pagina
 function insert_pokemon_on_card(pokemon) {
-    const card = new Card(pokemon).generate_card(pokemon)
+    const card = Card.generate_card(pokemon)
     pokemons_row.appendChild(card)
 }
 
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
 search_btn.addEventListener("click", () => {
     const pokemon_name = search_input.value.toLowerCase()
-    search_pokemon(pokemon_name)
+    search_pokemon_and_insert_on_page(pokemon_name)
 })
 
 rend_pokemon_list()
