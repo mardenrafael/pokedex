@@ -59,7 +59,7 @@ body {
   border-radius: 1rem;
 }
 
-.header_info{
+.header_info {
   font-size: 130%;
   font-weight: bolder;
 
@@ -68,7 +68,10 @@ body {
   margin: 1rem 1rem;
 }
 
-.info_img{
+.info_abilities {
+}
+
+.info_img {
   width: 15rem;
 
   margin: auto;
@@ -78,7 +81,7 @@ body {
   background-color: var(--terciary_color);
 }
 
-.section_info{
+.section_info {
   width: 15rem;
   height: 20rem;
 
@@ -86,7 +89,7 @@ body {
 }
 
 .header_card {
-  font-size: 110%;
+  font-size: 1.1rem;
   font-weight: bolder;
 
   text-align: center;
@@ -157,8 +160,6 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
 }
 
 .main-section {
