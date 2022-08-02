@@ -17,7 +17,7 @@ class CardCreator {
 
     //Cria a imagem dos pokemons
     const img_element = document.createElement("img")
-    img_element.setAttribute("src", pokemon_data.sprites.front_default)
+    img_element.setAttribute("src", pokemon_data.sprites.other["official-artwork"].front_default)
     img_element.setAttribute("alt", pokemon_data.name)
     img_element.setAttribute("class", "card_img")
 
@@ -60,7 +60,7 @@ class CardCreator {
 
     //cria o elemento da imagem do pokémon
     const img_element = document.createElement("img")
-    img_element.setAttribute("src", pokemon_data.sprites.front_default)
+    img_element.setAttribute("src", pokemon_data.sprites.other["official-artwork"].front_default)
     img_element.setAttribute("alt", pokemon_data.name)
     img_element.setAttribute("class", "info_img")
 
