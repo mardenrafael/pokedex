@@ -56,7 +56,7 @@ class CardCreator {
     //cria o header da div
     const header = document.createElement("header")
     header.setAttribute("class", "header_info")
-    header.innerText = `${pokemon_data.name.toUpperCase()}`
+    header.innerText = `Nº: ${pokemon_data.id} ${pokemon_data.name.toUpperCase()}`
 
     //cria o elemento da imagem do pokémon
     const img_element = document.createElement("img")
@@ -70,14 +70,14 @@ class CardCreator {
     section.appendChild(header)
     section.appendChild(img_element)
 
-    //cria e configura a sections das abilidades do pokemon
+    //cria e configura a sections das habilidades do pokemon
     const abilties_section = document.createElement("section")
     abilties_section.setAttribute("class", "section_info")
 
     //cria, configura e adiciona o cabeçalho da sections
     const header_abilities = document.createElement("header")
-    header_abilities.setAttribute("class", "header_info")
-    header_abilities.innerText = `${pokemon_data.name.toUpperCase()} ABILITIES`
+    header_abilities.setAttribute("class", "sub-header_info")
+    header_abilities.innerText = `ABILITIES:`
 
     //cria, e configura um container para a lista de abilidades
     const abilities_list_outter_container = document.createElement("section")
@@ -86,10 +86,10 @@ class CardCreator {
     const abilities_list = document.createElement("ul")
 
     pokemon_data.abilities.map((acc) => {
-      console.log(acc.is_hidden ? `${acc.ability.name} is hidden ability` : `${acc.ability.name} is not hidden ability`);
+      abilities_list_outter_container.innerHTML += acc.is_hidden ? `${acc.ability.name}: hidden </br>` : `${acc.ability.name}: not hidden </br>`
     })
 
-    //insere a lista de abilidades dentro do container
+    //insere a lista de habilidades dentro do container
     abilities_list_outter_container.appendChild(abilities_list)
 
 
