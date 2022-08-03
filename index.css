@@ -59,6 +59,10 @@ body {
   border-radius: 1rem;
 }
 
+.abilities_list {
+  list-style-type: none;
+}
+
 .header_info {
   font-size: 130%;
   font-weight: bolder;
@@ -72,13 +76,12 @@ body {
   font-size: 100%;
   font-weight: bolder;
 
-  /* text-align: center; */
+  text-align: center;
 
   margin: 1rem 1rem;
 }
 
 .info_abilities {
-
 }
 
 .info_img {
