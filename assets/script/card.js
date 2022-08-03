@@ -1,6 +1,11 @@
 class CardCreator {
 
-  generate_card(pokemon_data) {
+  /**
+   * 
+   * @param {JSON} pokemon_data Objeto json com os dados do pokemon
+   * @returns {HTMLDivElement} retorna uma div formatada com as classes para ser inserida dentro do site
+   */
+  static generate_card(pokemon_data) {
     //Cria a div principal e configura ela
     const div = document.createElement("div")
     div.setAttribute("class", "card")
@@ -45,7 +50,12 @@ class CardCreator {
     return div
   }
 
-  show_more_info(pokemon_data) {
+  /**
+   * 
+   * @param {JSON} pokemon_data Objeto json com os dados do pokemon
+   * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
+   */
+  static show_more_info(pokemon_data) {
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
 
@@ -107,6 +117,5 @@ class CardCreator {
     info_section.replaceChildren(div)
 
     return div
-
   }
 }
