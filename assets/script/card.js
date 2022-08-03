@@ -13,12 +13,7 @@ class CardCreator {
     //Cria a header principal e configura ela
     const header = document.createElement("header")
     header.setAttribute("class", "header_card")
-
     header.innerText = `${pokemon_data.name.toUpperCase()}`
-
-    //Cria a section principal e configura ela
-    // const section = document.createElement("section")
-    // section.setAttribute("class", "section_card")
 
     //Cria a imagem dos pokemons
     const img_element = document.createElement("img")
@@ -66,7 +61,7 @@ class CardCreator {
     //cria o header da div
     const header = document.createElement("header")
     header.setAttribute("class", "header_info")
-    header.innerText = `${pokemon_data.id} ${pokemon_data.name.toUpperCase()}`
+    header.innerText = `${pokemon_data.name.toUpperCase()}`
 
     //cria o elemento da imagem do pokémon
     const img_element = document.createElement("img")
