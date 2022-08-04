@@ -1,9 +1,11 @@
+//#region variaveis
 const BASE_URL = "https://pokeapi.co/api/v2/"
 const pokemons_row = document.getElementById("pokemons_row")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
+//#endregion
 
-
+//#region functions
 // recebe o nome do pokemon como parametro, busca o pokemon pelo nome
 // gerar o card e depois insere no html
 async function search_pokemon_and_insert_on_page(pokemon_name) {
@@ -44,5 +46,6 @@ search_btn.addEventListener("click", () => {
   const pokemon_name = search_input.value.toLowerCase()
   search_pokemon_and_insert_on_page(pokemon_name)
 })
+//#endregion
 
 rend_pokemon_list()
