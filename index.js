@@ -4,21 +4,14 @@ const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
 
 
-// recebe o nome do pokemon como parametro, chama a função get_pokemon para fazer pesquisa
-// e o método generate_card para gerar o card e depois insere no html
+// recebe o nome do pokemon como parametro, busca o pokemon pelo nome
+// gerar o card e depois insere no html
 async function search_pokemon_and_insert_on_page(pokemon_name) {
-  const pokemon_data = await get_pokemon(pokemon_name)
-
-  const search_card = CardCreator.generate_card(pokemon_data)
-  pokemons_row.replaceChildren(search_card)
-}
-
-//Realiza uma busca atraves do nome do pokemon
-async function get_pokemon(pokemon_name) {
   const response = await fetch(`${BASE_URL}pokemon/${pokemon_name}`)
   const pokemon_data_json = await response.json()
 
-  return await pokemon_data_json
+  const search_card = CardCreator.generate_card(pokemon_data_json)
+  pokemons_row.appendChild(search_card)
 }
 
 
@@ -31,35 +24,19 @@ async function rend_pokemon_list() {
   const response = await fetch(POKEMONS_URL)
   const pokemons_list = await response.json().then((resp) => {
     return resp.results
-  })
+  });
 
   // cria um array para armazenar pokemons selecionados aleatoriamente
   let pokemons_list_ref = []
-
   //seleciona pokemons aleatorios dentro da lista de pokemons retornados da API
   for (let i = 0; i < MAX_POKEMONS_IN_ROW; i++) {
     pokemons_list_ref.push(pokemons_list[Math.floor(Math.random() * pokemons_list.length)])
   }
 
-
-  //Busca os dados dos pokemons selecionados
-  let pokemons_data = []
-
+  //Busca os dados dos pokemons selecionados e os insere na pagina
   for (let i = 0; i < pokemons_list_ref.length; i++) {
-    pokemons_data.push(await get_pokemon(pokemons_list_ref[i].name))
+    search_pokemon_and_insert_on_page(pokemons_list_ref[i].name)
   }
-
-  //insere os pokemons buscados no html
-  for (let i = 0; i < 3; i++) {
-    insert_pokemon_on_card(pokemons_data[i])
-  }
-}
-
-
-// recebe commo parametro o pokemon pesquisado e insere ele na pagina
-function insert_pokemon_on_card(pokemon) {
-  const card = CardCreator.generate_card(pokemon)
-  pokemons_row.appendChild(card)
 }
 
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
