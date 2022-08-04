@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
-    <title>Pokedex</title>
-</head>
-<body>
-    <header class="header">
-        <div class="title">
-            Pokedex
-        </div>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./index.css" />
+		<title>Pokedex</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="title">Pokedex</div>
+		</header>
 
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Insira o nome do pokémon">
-        <button id="search-btn">Search</button>
-    </div>
-    
-    <section class="main-section">
-        <section class="row" id="pokemons_row"></section>
-    </section>
+		<div class="search-container">
+			<input
+				type="text"
+				id="search"
+				placeholder="Insira o nome do pokémon"
+			/>
+			<button id="search-btn">Search</button>
+		</div>
 
+		<section class="main-section" id="show-info">
+		</section>
+		<section class="main-section">
+			<section class="row" id="pokemons_row"></section>
+		</section>
 
-<script src="./assets/script/card.js"></script>
-<script src="./index.js"></script>
-</body>
+		<script src="./assets/script/card.js"></script>
+		<script src="./index.js"></script>
+	</body>
 </html>
