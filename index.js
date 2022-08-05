@@ -5,6 +5,7 @@ const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
 //#endregion
 
+
 //#region functions
 // recebe o nome do pokemon como parametro, busca o pokemon pelo nome
 // gerar o card e depois insere no html

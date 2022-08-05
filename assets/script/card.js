@@ -6,28 +6,34 @@ class CardCreator {
    * @returns {HTMLDivElement} retorna uma div formatada com as classes para ser inserida dentro do site
    */
   static generate_card(pokemon_data) {
+
     //Cria a div principal e configura ela
-    const div = document.createElement("div")
-    div.setAttribute("class", "card")
+    const main_div = this.#generate_element("div", {
+      class: "card"
+    })
 
     //Cria a header principal e configura ela
-    const header = document.createElement("header")
-    header.setAttribute("class", "header_card")
+    const header = this.#generate_element("header", {
+      class: "header_card"
+    }, main_div)
     header.innerText = `${pokemon_data.name.toUpperCase()}`
 
     //Cria a imagem dos pokemons
-    const img_element = document.createElement("img")
-    img_element.setAttribute("src", pokemon_data.sprites.other["official-artwork"].front_default)
-    img_element.setAttribute("alt", pokemon_data.name)
-    img_element.setAttribute("class", "card_img")
+    const img_element = this.#generate_element("img", {
+      class: "card_img",
+      src: pokemon_data.sprites.other["official-artwork"].front_default,
+      alt: pokemon_data.name
+    }, main_div)
 
     //Cria a footer principal e configura ela
-    const footer = document.createElement("footer")
-    footer.setAttribute("class", "footer_card")
+    const footer = this.#generate_element("footer", {
+      class: "footer_card"
+    }, main_div)
 
-    const more_info_button = document.createElement("button")
-    more_info_button.setAttribute("class", "more_info_btn")
-
+    //Cria o botão de mais informações
+    const more_info_button = this.#generate_element("button", {
+      class: "more_info_btn"
+    }, footer)
     more_info_button.innerText = `Mais informações sobre ${pokemon_data.name}`
 
     // chama o método show_more_info
@@ -35,14 +41,7 @@ class CardCreator {
       this.show_more_info(pokemon_data)
     })
 
-    footer.appendChild(more_info_button)
-
-    div.appendChild(header)
-    div.appendChild(img_element)
-    div.appendChild(footer)
-
-
-    return div
+    return main_div
   }
 
   /**
@@ -55,62 +54,83 @@ class CardCreator {
     const info_section = document.getElementById("show-info")
 
     //cria a div onde vão ser mostradas as informações
-    const div = document.createElement("div")
-    div.setAttribute("class", "info-card")
+    const main_div = this.#generate_element("div", {
+      class: "info-card"
+    })
+
+    // cria a section
+    const section = this.#generate_element("section", {
+      class: "section_info"
+    }, main_div)
 
     //cria o header da div
-    const header = document.createElement("header")
-    header.setAttribute("class", "header_info")
+    const header = this.#generate_element("header", {
+      class: "header_info"
+    }, section)
+
     header.innerText = `${pokemon_data.name.toUpperCase()}`
 
     //cria o elemento da imagem do pokémon
-    const img_element = document.createElement("img")
-    img_element.setAttribute("src", pokemon_data.sprites.other["official-artwork"].front_default)
-    img_element.setAttribute("alt", pokemon_data.name)
-    img_element.setAttribute("class", "info_img")
-
-    const section = document.createElement("section")
-    section.setAttribute("class", "section_info")
-
-    section.appendChild(header)
-    section.appendChild(img_element)
+    const img_element = this.#generate_element("img", {
+      class: "info_img",
+      src: pokemon_data.sprites.other["official-artwork"].front_default,
+      alt: pokemon_data.name
+    }, section)
 
     //cria e configura a sections das habilidades do pokemon
-    const abilties_section = document.createElement("section")
-    abilties_section.setAttribute("class", "section_info")
+    const abilities_section = this.#generate_element("section", {
+      class: "section_info"
+    }, main_div)
 
     //cria, configura e adiciona o cabeçalho da sections
-    const header_abilities = document.createElement("header")
-    header_abilities.setAttribute("class", "sub-header_info")
+    const header_abilities = this.#generate_element("header", {
+      class: "sub-header_info"
+    }, abilities_section)
+
     header_abilities.innerText = `ABILITIES`
 
     //cria, e configura um container para a lista de abilidades
-    const abilities_list_outter_container = document.createElement("section")
-    abilities_list_outter_container.setAttribute("class", "info_abilities")
-    //cria uma lista de abilidades
-    const abilities_list = document.createElement("ul")
-    abilities_list.setAttribute("class", "abilities_list")
+    const abilities_list_outter_container = this.#generate_element("section", {
+      class: "info_abilities",
+    }, abilities_section)
 
-    //passa atraves de todas abilitades do pokemon e insere eles dentro de uma lista
+    //cria uma lista de abilidades
+    const abilities_list = this.#generate_element("ul", {
+      class: "abilities_list"
+    }, abilities_list_outter_container)
+
+    //passa por todas abilitades do pokemon e insere eles dentro de uma lista
     pokemon_data.abilities.map((ability) => {
       abilities_list.innerHTML += ability.is_hidden ? `<li> ${ability.ability.name}: hidden </li> ` : `<li> ${ability.ability.name}: not hidden </li>`
     })
 
-    //insere a lista de habilidades dentro do container
-    abilities_list_outter_container.appendChild(abilities_list)
-
-
-    abilties_section.appendChild(header_abilities)
-    abilties_section.appendChild(abilities_list_outter_container)
-    //
-
-    div.appendChild(section)
-    div.appendChild(abilties_section)
-
-
     //insere a div no html
-    info_section.replaceChildren(div)
+    info_section.replaceChildren(main_div)
+  }
 
-    return div
+  /**
+   * 
+   * @param {String} Element Elemento que deve ser criado 
+   * @param {Object} Attributes Objetos com os atributos que vão ser criados e seus valores 
+   * @param {HTMLElement} Parent Elemento HTML que vai ser pai do elemento que esta sendo criado 
+   * @returns HTMLElement que foi criado
+   */
+  static #generate_element(Element, Attributes = null, Parent = null) {
+
+    const element = document.createElement(Element)
+
+    if (Attributes) {
+      const attributes_array = Object.entries(Attributes)
+
+      for (let i = 0; i < attributes_array.length; i++) {
+        element.setAttribute(attributes_array[i][0], attributes_array[i][1])
+      }
+    }
+
+    if (Parent) {
+      Parent.appendChild(element)
+    }
+
+    return element
   }
 }
