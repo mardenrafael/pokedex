@@ -39,6 +39,7 @@ class CardCreator {
     // chama o método show_more_info
     more_info_button.addEventListener("click", () => {
       this.show_more_info(pokemon_data)
+      window.scrollTo({top: 0, behavior: 'smooth'})
     })
 
     return main_div
