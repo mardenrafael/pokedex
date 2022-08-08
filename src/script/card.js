@@ -57,6 +57,10 @@ class CardCreator {
    * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
   static show_more_info(pokemon_data) {
+    
+    console.log(pokemon_data.stats);
+
+
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
 
@@ -84,7 +88,33 @@ class CardCreator {
       alt: pokemon_data.name
     }, section)
 
-    //cria e configura a sections das habilidades do pokemon
+    const stats_section = this.#generate_element("section", {
+      class: "section_info"
+    }, main_div)
+
+    //cria, configura e adiciona o cabeçalho da sections
+    const header_stat = this.#generate_element("header", {
+      class: "sub-header_info"
+    }, stats_section)
+
+    header_stat.innerText = `STATS`
+
+    //cria, e configura um container para a lista de stats
+    const stats_list_outter_container = this.#generate_element("section", {
+      class: "info_stats",
+    }, stats_section)
+
+    //cria uma lista de stats
+    const stat_list = this.#generate_element("ul", {
+      class: "stats_list"
+    }, stats_list_outter_container)
+
+    //passa por todos os stats do pokemon e insere eles dentro de uma lista
+    pokemon_data.stats.map((stat) => {
+      stat_list.innerHTML += `<li> ${stat.stat.name}: ${stat.base_stat}</li>`
+    })
+
+    //cria e configura a sections dos stats do pokemon
     const abilities_section = this.#generate_element("section", {
       class: "section_info"
     }, main_div)
@@ -96,17 +126,17 @@ class CardCreator {
 
     header_abilities.innerText = `ABILITIES`
 
-    //cria, e configura um container para a lista de abilidades
+    //cria, e configura um container para a lista de habilidades
     const abilities_list_outter_container = this.#generate_element("section", {
       class: "info_abilities",
     }, abilities_section)
 
-    //cria uma lista de abilidades
+    //cria uma lista de habilidades
     const abilities_list = this.#generate_element("ul", {
       class: "abilities_list"
     }, abilities_list_outter_container)
 
-    //passa por todas abilitades do pokemon e insere eles dentro de uma lista
+    //passa por todas habilitades do pokemon e insere eles dentro de uma lista
     pokemon_data.abilities.map((ability) => {
       abilities_list.innerHTML += ability.is_hidden ? `<li> ${ability.ability.name}: hidden </li> ` : `<li> ${ability.ability.name}: not hidden </li>`
     })

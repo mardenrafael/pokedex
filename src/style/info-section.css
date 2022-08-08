@@ -1,3 +1,7 @@
+li {
+  list-style-type: none;
+}
+
 .info-card {
   background-color: var(--primary_color);
 
@@ -13,9 +17,6 @@
   border-radius: 1rem;
 }
 
-.abilities_list {
-  list-style-type: none;
-}
 
 .header_info {
   font-size: 130%;
