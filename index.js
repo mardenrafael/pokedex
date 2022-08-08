@@ -5,7 +5,6 @@ const main_section = document.getElementById("main-section")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
 const load_btn = document.getElementById("load-btn")
-let offset = 1, limit = 18
 //#endregion
 
 
@@ -26,8 +25,11 @@ async function search_pokemon(pokemon_name) {
 }
 
 
-//recebe os valores offset que é diz de onde vai começar a busca pelo pokemons, e limit que estabelece o limite de pokemons que vai ser buscado e renderizado
-//por padrão ele renderiza os primeiros 18 pokemons
+/**
+ * 
+ * @param {Number} offset Indica onde vai comecçar a busca pelos pokemons
+ * @param {*} limit Indica o limete de buscas que vão ser feitas
+ */
 async function rend_pokemon_list(offset = 1, limit = 18) {
 
   for (let i = 0; i < limit; i++) {
@@ -47,7 +49,6 @@ search_btn.addEventListener("click", () => {
 
 // evento que dispara quando o botão de load for clicado, carregando mais pokemons a partir do ultimo pokemon a ser carregado no card
 load_btn.addEventListener("click", () => {
-  // offset += limit + 1
   rend_pokemon_list()
 })
 
