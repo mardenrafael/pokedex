@@ -51,7 +51,7 @@ search_btn.addEventListener("click", () => {
   const pokemon_name = search_input.value.toLowerCase()
 
   search_pokemon(pokemon_name).then(pokemon => {
-    insert_pokemon_on_card(pokemon)
+    CardCreator.show_details(pokemon)
   })
 })
 

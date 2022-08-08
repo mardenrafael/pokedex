@@ -54,7 +54,6 @@ class CardCreator {
   /**
    * 
    * @param {JSON} pokemon_data Objeto json com os dados do pokemon
-   * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
   static show_details(pokemon_data) {
     //seleciona a section onde as informações vão ser exibidas
