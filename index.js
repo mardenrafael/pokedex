@@ -5,13 +5,13 @@ const main_section = document.getElementById("main-section")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
 const load_btn = document.getElementById("load-btn")
+let last_pokemon_id = 0
 //#endregion
 
 
 //#region functions
 //função que recebe o nome do pokemon e o insere no card
 function insert_pokemon_on_card(pokemon) {
-  console.log(pokemon);
   const card = CardCreator.generate_card(pokemon)
   pokemons_row.appendChild(card)
 }
@@ -34,7 +34,7 @@ async function search_pokemon(pokemon_name) {
 /**
  * 
  * @param {Number} offset Indica onde vai comecçar a busca pelos pokemons
- * @param {*} limit Indica o limete de buscas que vão ser feitas
+ * @param {Number} limit Indica o limete de buscas que vão ser feitas
  */
 async function rend_pokemon_list(offset = 1, limit = 18) {
 
@@ -43,6 +43,7 @@ async function rend_pokemon_list(offset = 1, limit = 18) {
     insert_pokemon_on_card(pokemon_data)
   }
 
+  last_pokemon_id += limit
 }
 
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
@@ -53,7 +54,7 @@ search_btn.addEventListener("click", () => {
 
 // evento que dispara quando o botão de load for clicado, carregando mais pokemons a partir do ultimo pokemon a ser carregado no card
 load_btn.addEventListener("click", () => {
-  rend_pokemon_list()
+  rend_pokemon_list(last_pokemon_id)
 })
 
 //#endregion
