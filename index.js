@@ -11,11 +11,11 @@ const load_btn = document.getElementById("load-btn")
 //#region functions
 //função que recebe o nome do pokemon e o insere no card
 function insert_pokemon_on_card(pokemon) {
+  console.log(pokemon);
   const card = CardCreator.generate_card(pokemon)
   pokemons_row.appendChild(card)
 }
 
-//função que recebe o nome do pokemon como parametro e faz a busca
 
 /**
  * 
@@ -39,8 +39,7 @@ async function search_pokemon(pokemon_name) {
 async function rend_pokemon_list(offset = 1, limit = 18) {
 
   for (let i = 0; i < limit; i++) {
-    const POKEMONS_URL = BASE_URL + `pokemon/${i + offset}`
-    const pokemon_data = await fetch(POKEMONS_URL).then(resp => resp.json());
+    const pokemon_data = await search_pokemon(i + offset)
     insert_pokemon_on_card(pokemon_data)
   }
 
