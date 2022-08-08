@@ -16,6 +16,12 @@ function insert_pokemon_on_card(pokemon) {
 }
 
 //função que recebe o nome do pokemon como parametro e faz a busca
+
+/**
+ * 
+ * @param {String} pokemon_name Nome do pokemon que vai ser pesquisado 
+ * @returns Json com os dados do pokemon
+ */
 async function search_pokemon(pokemon_name) {
   const response = await fetch(`${BASE_URL}pokemon/${pokemon_name}`)
   const pokemon_data_json = await response.json()
