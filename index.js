@@ -20,8 +20,8 @@ async function search_pokemon(pokemon_name) {
   const response = await fetch(`${BASE_URL}pokemon/${pokemon_name}`)
   const pokemon_data_json = await response.json()
 
-  const search_card = CardCreator.generate_card(pokemon_data_json)
-  main_section.replaceChildren(search_card)
+  return pokemon_data_json
+
 }
 
 
@@ -34,7 +34,6 @@ async function rend_pokemon_list(offset = 1, limit = 18) {
 
   for (let i = 0; i < limit; i++) {
     const POKEMONS_URL = BASE_URL + `pokemon/${i + offset}`
-    console.log(offset);
     const pokemon_data = await fetch(POKEMONS_URL).then(resp => resp.json());
     insert_pokemon_on_card(pokemon_data)
   }
