@@ -29,140 +29,6 @@ body {
   padding: 1rem;
 }
 
-.card {
-  background-color: var(--primary_color);
-
-  display: grid;
-  grid-template-rows: 1fr 2fr 1.5fr;
-
-  width: 50%;
-  height: 20rem;
-
-  padding: 1%;
-  margin: 5% auto;
-
-  border-radius: 5%;
-}
-
-.info-card {
-  background-color: var(--primary_color);
-
-  width: 80%;
-  height: 40rem;
-
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-
-  padding: 1%;
-  margin: 5% auto;
-
-  border-radius: 1rem;
-}
-
-.abilities_list {
-  list-style-type: none;
-}
-
-.header_info {
-  font-size: 130%;
-  font-weight: bolder;
-
-  text-align: center;
-
-  margin: 1rem 1rem;
-}
-
-.sub-header_info {
-  font-size: 100%;
-  font-weight: bolder;
-
-  text-align: center;
-
-  margin: 1rem 1rem;
-}
-
-.info_img {
-  width: 15rem;
-
-  margin: auto;
-
-  border-radius: 5%;
-
-  background-color: var(--terciary_color);
-}
-
-.section_info {
-  width: 15rem;
-  height: 20rem;
-
-  margin: 0 1em 0;
-}
-
-.header_card {
-  font-size: 1.1rem;
-  font-weight: bolder;
-
-  text-align: center;
-
-  margin: 1rem 1rem 0;
-}
-
-.section_card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 1em 0;
-}
-
-.card_img {
-  width: 10rem;
-
-  margin: auto;
-
-  border-radius: 5%;
-
-  background-color: var(--terciary_color);
-}
-
-.footer_card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: 0 1em 1em;
-}
-
-.more_info_btn {
-  background-color: #0f3d3e;
-
-  color: #e2dcc8;
-
-  border: #e2dcc8 solid 0.2rem;
-  border-radius: 1rem 0.2rem 1rem 0.2rem;
-
-  padding: 0;
-
-  height: 75%;
-  width: 75%;
-
-  transition: 500ms;
-}
-
-.more_info_btn:hover {
-  cursor: pointer;
-
-  transition-duration: 500ms;
-
-  border-radius: 0.2rem 1rem 0.2rem 1rem;
-}
-
-.more_info_btn:active {
-  transition-duration: 250ms;
-
-  border-radius: 2rem;
-}
-
 .row {
   width: 100%;
   margin-left: auto;
@@ -204,10 +70,38 @@ body {
   border: none;
 
   background-color: var(--primary_color);
-  color: var(--secondary_color);
+  color: var(--terciary_color);
 }
 
 #search-btn:hover {
   background-color: var(--primary_color);
   cursor: pointer;
+}
+
+#load-btn {
+  background-color: var(--primary_color);
+  color: var(--terciary_color);
+  
+  border: #e2dcc8 solid 0.2rem;
+  border-radius: 1rem 0.2rem 1rem 0.2rem;
+  
+  padding: 1%;
+
+  display: block;
+  margin: 2% auto;
+
+}
+
+#load-btn:hover {
+  cursor: pointer;
+
+  transition-duration: 500ms;
+
+  border-radius: 0.2rem 1rem 0.2rem 1rem;
+}
+
+#load-btn:active {
+  transition-duration: 250ms;
+
+  border-radius: 2rem;
 }
