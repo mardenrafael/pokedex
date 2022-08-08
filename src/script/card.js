@@ -38,7 +38,7 @@ class CardCreator {
 
     // chama o método show_more_info
     more_info_button.addEventListener("click", () => {
-      this.show_more_info(pokemon_data)
+      this.show_details(pokemon_data)
       //scroll da tela para o topo
       window.scrollTo(
         {
@@ -56,7 +56,7 @@ class CardCreator {
    * @param {JSON} pokemon_data Objeto json com os dados do pokemon
    * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
-  static show_more_info(pokemon_data) {
+  static show_details(pokemon_data) {
 
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
