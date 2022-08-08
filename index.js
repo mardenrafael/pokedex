@@ -27,7 +27,6 @@ async function search_pokemon(pokemon_name) {
   const pokemon_data_json = await response.json()
 
   return pokemon_data_json
-
 }
 
 
@@ -46,10 +45,14 @@ async function rend_pokemon_list(offset = 1, limit = 18) {
   last_pokemon_id += limit
 }
 
+
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
 search_btn.addEventListener("click", () => {
   const pokemon_name = search_input.value.toLowerCase()
-  search_pokemon(pokemon_name)
+
+  search_pokemon(pokemon_name).then(pokemon => {
+    insert_pokemon_on_card(pokemon)
+  })
 })
 
 // evento que dispara quando o botão de load for clicado, carregando mais pokemons a partir do ultimo pokemon a ser carregado no card
