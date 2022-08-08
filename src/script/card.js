@@ -57,9 +57,6 @@ class CardCreator {
    * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
   static show_more_info(pokemon_data) {
-    
-    console.log(pokemon_data.stats);
-
 
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
