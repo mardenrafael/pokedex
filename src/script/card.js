@@ -36,7 +36,7 @@ class CardCreator {
     }, footer)
     more_info_button.innerText = `Mais informações sobre ${pokemon_data.name}`
 
-    // chama o método show_more_info
+    // chama o método show_details
     more_info_button.addEventListener("click", () => {
       this.show_details(pokemon_data)
       //scroll da tela para o topo
@@ -55,10 +55,8 @@ class CardCreator {
   /**
    * 
    * @param {JSON} pokemon_data Objeto json com os dados do pokemon
-   * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
-  static show_details(pokemon_data) {
-
+  static show_more_info(pokemon_data) {
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
 
@@ -93,23 +91,14 @@ class CardCreator {
       class: ""
     }, section)
 
-    const types_list = this.#generate_element("ul", {
-      class: ""
-    }, outter_container_list)
+    header.innerText = `${pokemon_data.name.toUpperCase()}`
 
-    types.map((types) => {
-      types_list.innerHTML += `<li> ${types.type.name} </li>`
-    })
-  }
-
-  /**
-   * 
-   * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
-   * @param {JSON} pokemon_data Dados do pokemon 
-   */
-  static create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
-
-    const pokemon_abilities = pokemon_data.abilities
+    //cria o elemento da imagem do pokémon
+    const img_element = this.#generate_element("img", {
+      class: "info_img",
+      src: pokemon_data.sprites.other["official-artwork"].front_default,
+      alt: pokemon_data.name
+    }, section)
 
     const abilities_section = this.#generate_element("section", {
       class: "section_info"
@@ -136,75 +125,9 @@ class CardCreator {
     pokemon_abilities.map((ability) => {
       abilities_list.innerHTML += ability.is_hidden ? `<li> ${ability.ability.name}: hidden </li> ` : `<li> ${ability.ability.name}: not hidden </li>`
     })
-  }
 
-
-  /**
-   * 
-   * @param {HTMLElement} main_div Div principal onde a section vai ser inserida 
-   * @param {JSON} pokemon_data Dados do pokemon
-   */
-  static create_pokemon_stat_section(main_div, pokemon_data) {
-
-    const pokemon_stats = pokemon_data.stats
-
-    const stats_section = this.#generate_element("section", {
-      class: "section_info"
-    }, main_div)
-
-    //cria, configura e adiciona o cabeçalho da sections
-    const header_stat = this.#generate_element("header", {
-      class: "sub-header-info"
-    }, stats_section)
-
-    header_stat.innerText = `STATS`
-
-    //cria, e configura um container para a lista de stats
-    const stats_list_outter_container = this.#generate_element("section", {
-      class: "info_stats",
-    }, stats_section)
-
-    //cria uma lista de stats
-    const stat_list = this.#generate_element("ul", {
-      class: "stats_list"
-    }, stats_list_outter_container)
-
-    //passa por todos os stats do pokemon e insere eles dentro de uma lista
-    pokemon_stats.map((stat) => {
-      stat_list.innerHTML += `<li> ${stat.stat.name}: ${stat.base_stat}</li>`
-    })
-  }
-
-
-  /**
-   * 
-   * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
-   * @param {JSON} pokemon_data Dados do pokemon 
-   */
-  static create_pokemon_image_section(main_div, pokemon_data) {
-
-    const pokemon = {
-      name: pokemon_data.name,
-      sprites: pokemon_data.sprites.other["official-artwork"].front_default
-    }
-
-    const section = this.#generate_element("section", {
-      class: "section_info"
-    }, main_div)
-
-    //cria o header da div
-    const header = this.#generate_element("header", {
-      class: "header_info"
-    }, section)
-
-    header.innerText = `${pokemon.name.toUpperCase()}`
-
-    //cria o elemento da imagem do pokémon
-    this.#generate_element("img", {
-      class: "info_img",
-      src: pokemon.sprites,
-      alt: pokemon.name
-    }, section)
+    //insere a div no html
+    info_section.replaceChildren(main_div)
   }
 
   /**
