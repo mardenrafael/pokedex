@@ -17,7 +17,6 @@ li {
   border-radius: 1rem;
 }
 
-
 .header_info {
   font-size: 130%;
   font-weight: bolder;
@@ -27,7 +26,7 @@ li {
   margin: 1rem;
 }
 
-.sub-header_info {
+.sub-header-info {
   font-size: 100%;
   font-weight: bolder;
 
