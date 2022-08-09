@@ -36,7 +36,7 @@ class CardCreator {
     }, footer)
     more_info_button.innerText = `Mais informações sobre ${pokemon_data.name}`
 
-    // chama o método show_more_info
+    // chama o método show_details
     more_info_button.addEventListener("click", () => {
       this.show_details(pokemon_data)
       //scroll da tela para o topo
@@ -55,10 +55,8 @@ class CardCreator {
   /**
    * 
    * @param {JSON} pokemon_data Objeto json com os dados do pokemon
-   * @returns {HTMLDivElement} retorna uma div para ser inserida dentro do site
    */
   static show_details(pokemon_data) {
-
     //seleciona a section onde as informações vão ser exibidas
     const info_section = document.getElementById("show-info")
 
@@ -137,7 +135,6 @@ class CardCreator {
       abilities_list.innerHTML += ability.is_hidden ? `<li> ${ability.ability.name}: hidden </li> ` : `<li> ${ability.ability.name}: not hidden </li>`
     })
   }
-
 
   /**
    * 
