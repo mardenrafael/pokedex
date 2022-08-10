@@ -9,7 +9,7 @@ li {
   height: 40rem;
 
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 1.5fr;
 
   padding: 1%;
   margin: 5% auto;
