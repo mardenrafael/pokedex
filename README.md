@@ -8,13 +8,13 @@
  
  <div align="center">
  
- <p>Uma pokedex feita em javascript puro consumindo uma API de pokémon, a <a href="https://pokeapi.co/docs/v2#pokemon-section">pokeapi</a>.</p>
+ <p>A pokedex made in pure javascript consuming a pokemon API, the <a href="https://pokeapi.co/docs/v2#pokemon-section">POKEAPI</a>.</p>
  
  </div
 
 <hr>
  
- ## Tecnologias usadas
+ ## Technologies used
   
   - HTML
   - CSS
@@ -22,6 +22,6 @@
  
  <hr>
  
- Projeto elaborado por
+ Project prepared by
   - <a href="https://github.com/mardenrafael/">Marden Rafael</a>
   - <a href="https://github.com/magnojunior07/">Magno Júnior</a>
