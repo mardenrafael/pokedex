@@ -16,7 +16,7 @@ class CardCreator {
     const header = this.#generate_element("header", {
       class: "header_card"
     }, main_div)
-    header.innerText = `${pokemon_data.name.toUpperCase()}`
+    header.innerText = `${pokemon_data.id}- ${pokemon_data.name.toUpperCase()}`
 
     //Cria a imagem dos pokemons
     const img_element = this.#generate_element("img", {
@@ -24,6 +24,9 @@ class CardCreator {
       src: pokemon_data.sprites.other["official-artwork"].front_default,
       alt: pokemon_data.name
     }, main_div)
+
+
+    this.create_pokemon_type_section(main_div, pokemon_data)
 
     //Cria a footer principal e configura ela
     const footer = this.#generate_element("footer", {
@@ -68,36 +71,32 @@ class CardCreator {
     this.create_pokemon_image_section(main_div, pokemon_data)
     this.create_pokemon_stat_section(main_div, pokemon_data)
     this.create_pokemon_abilities_list_seciton(main_div, pokemon_data)
-    this.create_pokemon_type_section(main_div, pokemon_data)
 
     //insere a div no html
     info_section.replaceChildren(main_div)
   }
 
+  /**
+   * 
+   * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
+   * @param {JSON} pokemon_data Dados do pokemon 
+   */
+
   static create_pokemon_type_section(main_div, pokemon_data) {
+
+    // cria a section dos tipos dos pokemons
+    const pokemon_types = this.#generate_element("section", {
+      class:"pokemon_types"
+    }, main_div)
 
     const types = pokemon_data.types
 
-    const section = this.#generate_element("section", {
-      class: "section_info"
-    }, main_div)
-
-    const section_header = this.#generate_element("header", {
-      class: "sub-header-info"
-    }, section)
-    section_header.innerText = "TYPES"
-
-    const outter_container_list = this.#generate_element("section", {
-      class: ""
-    }, section)
-
-    const types_list = this.#generate_element("ul", {
-      class: ""
-    }, outter_container_list)
-
+    // insere os tipos no html
     types.map((types) => {
-      types_list.innerHTML += `<li> ${types.type.name} </li>`
+      pokemon_types.innerHTML += `<h5 class="type_name" id="${types.type.name}" > ${types.type.name.toUpperCase()} </h5>`
     })
+
+  
   }
 
   /**
@@ -202,6 +201,10 @@ class CardCreator {
       src: pokemon.sprites,
       alt: pokemon.name
     }, section)
+
+    //função que vai criar a section dos tipos e inserir no html como filho da section atual
+    this.create_pokemon_type_section(section, pokemon_data)
+
   }
 
   /**
