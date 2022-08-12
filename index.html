@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./src/style/card.css" />
+    <link rel="stylesheet" href="./src/style/types.css" />
+    <link rel="stylesheet" href="./src/style/info-section.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+    />
     <title>Pokedex</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="title">
-            Pokedex
-        </div>
+      <div class="title">POKEDEX</div>
     </header>
 
     <div class="search-container">
-        <input type="text" id="search" placeholder="Insira o nome do pokémon">
-        <button id="search-btn">Search</button>
+      <input type="text" id="search" placeholder="Insira o nome do pokémon" />
+      <button id="search-btn">Search</button>
     </div>
-    
-    <section class="main-section">
-        <section class="row" id="pokemons_row"></section>
+
+    <section class="main-section" id="show-info"></section>
+    <section class="main-section" id="main-section">
+      <section class="row" id="pokemons_row"></section>
+      <button id="load-btn">Load more pokemons</button>
     </section>
 
-
-<script src="./assets/script/card.js"></script>
-<script src="./index.js"></script>
-</body>
+    <script src="./src/script/card.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
