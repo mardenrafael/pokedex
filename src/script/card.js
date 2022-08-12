@@ -21,7 +21,7 @@ class CardCreator {
     //Cria a imagem dos pokemons
     const img_element = this.#generate_element("img", {
       class: "card_img",
-      src: pokemon_data.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default,
+      src: pokemon_data.sprites.other.home.front_default,
       alt: pokemon_data.name
     }, main_div)
 
@@ -181,7 +181,7 @@ class CardCreator {
 
     const pokemon = {
       name: pokemon_data.name,
-      sprites: pokemon_data.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"].front_default
+      sprites: pokemon_data.sprites.other.home.front_default
     }
 
     const section = this.#generate_element("section", {
