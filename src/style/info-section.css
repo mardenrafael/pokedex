@@ -3,7 +3,7 @@ li {
 }
 
 .info-card {
-  background-color: var(--primary_color);
+  background: var(--gradient);
 
   width: 80%;
   height: 40rem;
@@ -15,6 +15,7 @@ li {
   margin: 5% auto;
 
   border-radius: 1rem;
+
 }
 
 .header_info {

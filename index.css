@@ -2,6 +2,8 @@
   --primary_color: #0f3d3e;
   --secondary_color: #e2dcc8;
   --terciary_color: #f1f1f1;
+
+  --gradient: linear-gradient(350.5deg, #0f3d3e, #124a4bcc);
 }
 
 body {
@@ -15,7 +17,7 @@ body {
 }
 
 .header {
-  background-color: var(--primary_color);
+  background: var(--gradient);
   width: 100%;
 
   display: flex;
@@ -72,7 +74,7 @@ body {
   border: none;
   border-radius: 1rem;
 
-  background-color: var(--primary_color);
+  background: var(--gradient);
   color: var(--terciary_color);
 }
 
@@ -82,7 +84,7 @@ body {
 }
 
 #load-btn {
-  background-color: var(--primary_color);
+  background: var(--gradient);
   color: var(--terciary_color);
   
   border: #e2dcc8 solid 0.2rem;
