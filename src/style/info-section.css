@@ -35,14 +35,26 @@ li {
   margin: 1rem;
 }
 
-.info_img {
+.img_info {
   width: 15rem;
 
   margin: auto;
 
   border-radius: 5%;
+}
+
+.info_main_img {
+  width: 100%;
 
   background-color: var(--terciary_color);
+}
+
+.info_sub_img {
+  height: 3rem;
+  width: 4rem;
+
+  position: absolute;
+
 }
 
 .section_info {
@@ -50,4 +62,5 @@ li {
   height: 20rem;
 
   margin: 0 1em;
+
 }
