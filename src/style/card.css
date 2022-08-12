@@ -54,7 +54,7 @@
 
   color: var(--primary_color);
 
-  border: #e2dcc8 solid 0.2rem;
+  border: var(--terciary_color) solid 0.2rem;
   border-radius: 1rem 0.2rem;
 
   padding: 0;

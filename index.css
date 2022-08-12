@@ -154,7 +154,7 @@ body {
   background: var(--gradient);
   color: var(--terciary_color);
   
-  border: #e2dcc8 solid 0.2rem;
+  border: var(--terciary_color) solid 0.2rem;
   border-radius: 1rem 0.2rem 1rem 0.2rem;
   
   padding: 1%;

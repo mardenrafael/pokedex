@@ -5,11 +5,11 @@ li {
 .info-card {
   background: var(--gradient);
 
-  width: 80%;
+  width: 60%;
   height: 30rem;
 
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 1.5fr;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
 
   padding: 1%;
   margin: 5% auto;
@@ -61,4 +61,31 @@ li {
   height: 20rem;
 
   margin: 0 auto;
+}
+
+.shiny_btn {
+  background: var(--terciary_color);
+  color: var(--primary_color);
+  
+  border: var(--terciary_color) solid 0.2rem;
+  border-radius: 1rem 0.2rem 1rem 0.2rem;
+  
+  padding: 1%;
+
+  display: block;
+  margin: 15% auto;
+}
+
+.shiny_btn:hover {
+  cursor: pointer;
+
+  transition-duration: 500ms;
+
+  border-radius: 0.2rem 1rem;
+}
+
+.shiny_btn:active {
+  transition-duration: 250ms;
+
+  border-radius: 2rem;
 }
