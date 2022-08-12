@@ -25,6 +25,9 @@ class CardCreator {
       alt: pokemon_data.name
     }, main_div)
 
+    change_color_mode_btn.addEventListener("click", () => {
+      change_color_mode(img_element)
+    })
 
     this.create_pokemon_type_section(main_div, pokemon_data)
 
@@ -222,6 +225,10 @@ class CardCreator {
 
     //função que vai criar a section dos tipos e inserir no html como filho da section atual
     this.create_pokemon_type_section(section, pokemon_data)
+
+    change_color_mode_btn.addEventListener("click", () => {
+      change_color_mode(main_img)
+    })
 
   }
 

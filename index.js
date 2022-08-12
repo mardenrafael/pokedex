@@ -2,12 +2,16 @@
 const BASE_URL = "https://pokeapi.co/api/v2/"
 const pokemons_row = document.getElementById("pokemons_row")
 const main_section = document.getElementById("main-section")
+const body = document.querySelector("body")
+const change_color_mode_btn = document.getElementById("change_color_mode")
 const search_input = document.getElementById("search")
 const search_btn = document.getElementById("search-btn")
 const load_btn = document.getElementById("load-btn")
 let last_pokemon_id = 0
 //#endregion
-
+change_color_mode_btn.addEventListener("click", () => {
+  change_color_mode(body)
+})
 
 //#region functions
 //função que recebe o nome do pokemon e o insere no card
@@ -46,9 +50,18 @@ async function rend_pokemon_list(offset = 1, limit = 18) {
 }
 
 
+function change_color_mode(element) {
+  const checkbox = document.getElementById("check")
+  
+  if (checkbox.checked == true) {
+    element.style.backgroundColor = "var(--terciary_color_dark_mode)"
+  } else {
+    element.style.backgroundColor = "var(--terciary_color)"
+  }
+}
+
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
 search_btn.addEventListener("click", () => {
-
   if (search_input.value != "") {
     const pokemon_name = search_input.value.toLowerCase()
     search_pokemon(pokemon_name).then(pokemon => {
