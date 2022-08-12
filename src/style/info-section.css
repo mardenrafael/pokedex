@@ -1,20 +1,20 @@
+li {
+  list-style-type: none;
+}
+
 .info-card {
-  background-color: var(--primary_color);
+  background: var(--gradient);
 
   width: 80%;
   height: 40rem;
 
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 1.5fr;
 
   padding: 1%;
   margin: 5% auto;
 
   border-radius: 1rem;
-}
-
-.abilities_list {
-  list-style-type: none;
 }
 
 .header_info {
@@ -26,7 +26,7 @@
   margin: 1rem;
 }
 
-.sub-header_info {
+.sub-header-info {
   font-size: 100%;
   font-weight: bolder;
 
@@ -35,19 +35,30 @@
   margin: 1rem;
 }
 
-.info_img {
+.img_info {
   width: 15rem;
 
   margin: auto;
 
   border-radius: 5%;
+}
+
+.info_main_img {
+  width: 100%;
 
   background-color: var(--terciary_color);
+}
+
+.info_sub_img {
+  height: 3rem;
+  width: 4rem;
+
+  position: absolute;
 }
 
 .section_info {
   width: 15rem;
   height: 20rem;
 
-  margin: 0 1em;
+  margin: auto;
 }
