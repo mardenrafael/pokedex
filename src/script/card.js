@@ -84,19 +84,26 @@ class CardCreator {
 
   static create_pokemon_type_section(main_div, pokemon_data) {
 
-    // cria a section dos tipos dos pokemons
-    const pokemon_types = this.#generate_element("section", {
-      class:"pokemon_types"
-    }, main_div)
 
     const types = pokemon_data.types
 
-    // insere os tipos no html
-    types.map((types) => {
-      pokemon_types.innerHTML += `<h5 class="type_name" id="${types.type.name}" > ${types.type.name.toUpperCase()} </h5>`
-    })
+    const all_types = []
+    types.forEach((element) => {
+      all_types.push(element.type.name)
+    });
 
-  
+    // cria a section dos tipos dos pokemons
+    const pokemon_types = this.#generate_element("section", {
+      class: `pokemon_types`
+    }, main_div)
+
+    all_types.forEach((value) => {
+      const header = this.#generate_element("h5", {
+        class: `type_name ${value}`
+      }, pokemon_types)
+
+      header.innerText = value
+    })
   }
 
   /**
@@ -196,8 +203,8 @@ class CardCreator {
     header.innerText = `${pokemon.name.toUpperCase()}`
 
     //cria o elemento da imagem do pokémon
-    const img_section = this.#generate_element("section",{
-      class:"img_info"
+    const img_section = this.#generate_element("section", {
+      class: "img_info"
     }, section)
 
     const sub_img = this.#generate_element("img", {
@@ -205,13 +212,13 @@ class CardCreator {
       src: pokemon_data.sprites.versions["generation-viii"].icons.front_default,
       alt: pokemon.name
     }, img_section)
-    
+
     const main_img = this.#generate_element("img", {
       class: "info_main_img",
       src: pokemon.sprites,
       alt: pokemon.name
     }, img_section)
-    
+
 
     //função que vai criar a section dos tipos e inserir no html como filho da section atual
     this.create_pokemon_type_section(section, pokemon_data)
