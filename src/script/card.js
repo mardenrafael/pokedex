@@ -53,7 +53,6 @@ class CardCreator {
         }
       )
     })
-
     return main_div
   }
 
