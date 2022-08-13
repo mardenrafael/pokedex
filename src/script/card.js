@@ -79,7 +79,6 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-
   static #create_pokemon_type_section(main_div, pokemon_data) {
 
 
