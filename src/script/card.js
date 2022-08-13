@@ -25,7 +25,7 @@ class CardCreator {
       alt: pokemon_data.name
     }, main_div)
 
-    this.create_pokemon_type_section(main_div, pokemon_data)
+    this.#create_pokemon_type_section(main_div, pokemon_data)
 
     //Cria a footer principal e configura ela
     const footer = this.#generate_element("footer", {
@@ -66,9 +66,9 @@ class CardCreator {
       class: "info-card"
     })
 
-    this.create_pokemon_image_section(main_div, pokemon_data)
-    this.create_pokemon_stat_section(main_div, pokemon_data)
-    this.create_pokemon_abilities_list_seciton(main_div, pokemon_data)
+    this.#create_pokemon_image_section(main_div, pokemon_data)
+    this.#create_pokemon_stat_section(main_div, pokemon_data)
+    this.#create_pokemon_abilities_list_seciton(main_div, pokemon_data)
 
     //insere a div no html
     info_section.replaceChildren(main_div)
@@ -80,7 +80,7 @@ class CardCreator {
    * @param {JSON} pokemon_data Dados do pokemon 
    */
 
-  static create_pokemon_type_section(main_div, pokemon_data) {
+  static #create_pokemon_type_section(main_div, pokemon_data) {
 
 
     const types = pokemon_data.types
@@ -109,7 +109,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
+  static #create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
 
     const pokemon_abilities = pokemon_data.abilities
 
@@ -145,7 +145,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida 
    * @param {JSON} pokemon_data Dados do pokemon
    */
-  static create_pokemon_stat_section(main_div, pokemon_data) {
+  static #create_pokemon_stat_section(main_div, pokemon_data) {
 
     const pokemon_stats = pokemon_data.stats
 
@@ -182,7 +182,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_image_section(main_div, pokemon_data) {
+  static #create_pokemon_image_section(main_div, pokemon_data) {
 
     const pokemon = {
       name: pokemon_data.name,
@@ -219,7 +219,7 @@ class CardCreator {
 
 
     //função que vai criar a section dos tipos e inserir no html como filho da section atual
-    this.create_pokemon_type_section(section, pokemon_data)
+    this.#create_pokemon_type_section(section, pokemon_data)
 
   }
 
