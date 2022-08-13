@@ -68,7 +68,7 @@ li {
   color: var(--primary_color);
   
   border: var(--terciary_color) solid 0.2rem;
-  border-radius: 1rem 0.2rem 1rem 0.2rem;
+  border-radius: 1rem 0.2rem;
   
   padding: 1%;
 
