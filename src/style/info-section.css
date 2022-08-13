@@ -6,7 +6,7 @@ li {
   background: var(--gradient);
 
   width: 80%;
-  height: 40rem;
+  height: 30rem;
 
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 1.5fr;
@@ -60,5 +60,5 @@ li {
   width: 15rem;
   height: 20rem;
 
-  margin: auto;
+  margin: 0 auto;
 }
