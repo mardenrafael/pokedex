@@ -1,5 +1,7 @@
 # POKEDEX
  
+ [![CodeFactor](https://www.codefactor.io/repository/github/mardenrafael/pokedex/badge)](https://www.codefactor.io/repository/github/mardenrafael/pokedex)
+ 
  <hr>
  
  <div align="center"> 
