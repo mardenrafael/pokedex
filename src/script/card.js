@@ -25,10 +25,6 @@ class CardCreator {
       alt: pokemon_data.name
     }, main_div)
 
-    change_color_mode_btn.addEventListener("click", () => {
-      change_color_mode(img_element)
-    })
-
     this.create_pokemon_type_section(main_div, pokemon_data)
 
     //Cria a footer principal e configura ela
@@ -70,9 +66,9 @@ class CardCreator {
       class: "info-card"
     })
 
-    this.create_pokemon_image_section(main_div, pokemon_data)
-    this.create_pokemon_stat_section(main_div, pokemon_data)
-    this.create_pokemon_abilities_list_seciton(main_div, pokemon_data)
+    this.#create_pokemon_image_section(main_div, pokemon_data)
+    this.#create_pokemon_stat_section(main_div, pokemon_data)
+    this.#create_pokemon_abilities_list_seciton(main_div, pokemon_data)
 
 
     //insere a div no html
@@ -84,7 +80,6 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-
   static create_pokemon_type_section(main_div, pokemon_data) {
 
 
@@ -241,6 +236,7 @@ class CardCreator {
 
 
     //função que vai criar a section dos tipos e inserir no html como filho da section atual
+
     this.create_pokemon_type_section(section, pokemon_data)
 
 

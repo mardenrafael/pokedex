@@ -2,7 +2,7 @@
   --primary_color: #0f3d3e;
   --secondary_color: #e2dcc8;
   --terciary_color: #f1f1f1;
-  --terciary_color_dark_mode: #1f212b;
+  --terciary_color_dark: #1f212b;
 
   --gradient: linear-gradient(350.5deg, #0f3d3e, #124a4bcc);
 }
@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: 'Acme', sans-serif;
+  font-family: "Acme", sans-serif;
 
   background-color: var(--terciary_color);
   color: var(--terciary_color);
@@ -42,7 +42,6 @@ body {
   top: 5%;
 
   display: inline-block;
-
 }
 
 #check {
@@ -52,18 +51,18 @@ body {
 .slider {
   position: absolute;
   cursor: pointer;
-  
+
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
   border-radius: 1rem;
-  
+
   background-color: var(--terciary_color);
-  
-  -webkit-transition: .4s;
-  transition: .4s;
+
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -72,24 +71,24 @@ body {
 
   height: 1.5rem;
   width: 1.5rem;
-  
+
   left: 0.25rem;
   bottom: 0.25rem;
-  
+
   border-radius: 50%;
-  
+
   background-color: var(--primary_color);
-  
-  -webkit-transition: .4s;
-  transition: .4s;
+
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 #check:checked + .slider {
-  background-color: var(--terciary_color_dark_mode);
+  background-color: var(--terciary_color_dark);
 }
 
 #check:focus + .slider {
-  box-shadow: 0 0 1px var(--terciary_color_dark_mode);
+  box-shadow: 0 0 1px var(--terciary_color_dark);
 }
 
 #check:checked + .slider:before {
@@ -119,7 +118,6 @@ body {
 
   display: flex;
   justify-content: center;
-
 }
 
 #search {
@@ -156,12 +154,11 @@ body {
   
   border: var(--terciary_color) solid 0.2rem;
   border-radius: 1rem 0.2rem 1rem 0.2rem;
-  
+
   padding: 1%;
 
   display: block;
   margin: 2% auto;
-
 }
 
 #load-btn:hover {
