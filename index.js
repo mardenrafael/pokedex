@@ -7,12 +7,13 @@ const pokemons_cards = []
 let last_pokemon_id = 0
 let is_dark_mode = false
 
-change_color_mode_btn.addEventListener("click", () => {
-  change_color_mode()
-})
 
 
 //função que recebe o nome do pokemon e o insere no card
+/**
+ * 
+ * @param {JSON} pokemon Dados do pokemon que vai ser inserido na pagina
+ */
 function insert_pokemon_on_card(pokemon) {
   const pokemons_row = document.getElementById("pokemons_row")
 
@@ -50,7 +51,9 @@ async function rend_pokemon_list(offset = 1, limit = 18) {
   last_pokemon_id += limit
 }
 
-
+/**
+ * @description Muda o tema da pagina para dark ou para default
+ */
 function change_color_mode() {
   const checkbox = document.getElementById("check")
   const body = document.querySelector("body")
@@ -77,6 +80,7 @@ function change_color_mode() {
   is_dark_mode = !is_dark_mode
 }
 
+
 // evento que dispara quando o botão de busca for clicado para buscar um pokémon
 search_btn.addEventListener("click", () => {
   if (search_input.value != "") {
@@ -92,5 +96,9 @@ load_btn.addEventListener("click", () => {
   rend_pokemon_list(last_pokemon_id)
 })
 
+// evento que dispara quanto o botão for clicado para mudar o tema da pagina
+change_color_mode_btn.addEventListener("click", () => {
+  change_color_mode()
+})
 
 rend_pokemon_list()
