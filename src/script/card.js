@@ -125,7 +125,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
+  static #create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
 
     const pokemon_abilities = pokemon_data.abilities
 
@@ -161,7 +161,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida 
    * @param {JSON} pokemon_data Dados do pokemon
    */
-  static create_pokemon_stat_section(main_div, pokemon_data) {
+  static #create_pokemon_stat_section(main_div, pokemon_data) {
 
     const pokemon_stats = pokemon_data.stats
 
@@ -198,7 +198,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_image_section(main_div, pokemon_data) {
+  static #create_pokemon_image_section(main_div, pokemon_data) {
 
     const pokemon = {
       name: pokemon_data.name,
