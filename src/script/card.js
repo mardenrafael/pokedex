@@ -25,7 +25,6 @@ class CardCreator {
       alt: pokemon_data.name
     }, main_div)
 
-
     this.create_pokemon_type_section(main_div, pokemon_data)
 
     //Cria a footer principal e configura ela
@@ -50,7 +49,6 @@ class CardCreator {
         }
       )
     })
-
     return main_div
   }
 
@@ -68,9 +66,10 @@ class CardCreator {
       class: "info-card"
     })
 
-    this.create_pokemon_image_section(main_div, pokemon_data)
-    this.create_pokemon_stat_section(main_div, pokemon_data)
-    this.create_pokemon_abilities_list_seciton(main_div, pokemon_data)
+    this.#create_pokemon_image_section(main_div, pokemon_data)
+    this.#create_pokemon_stat_section(main_div, pokemon_data)
+    this.#create_pokemon_abilities_list_seciton(main_div, pokemon_data)
+
 
     //insere a div no html
     info_section.replaceChildren(main_div)
@@ -81,7 +80,6 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-
   static create_pokemon_type_section(main_div, pokemon_data) {
 
 
@@ -106,12 +104,28 @@ class CardCreator {
     })
   }
 
+  static show_shiny_version_section(main_img, pokemon) {
+
+    const current_img = main_img
+
+    if (current_img.src == pokemon.sprites) {
+
+      current_img.src = pokemon.shiny_sprites
+
+    } else {
+
+      current_img.src = pokemon.sprites
+
+    }
+
+  }
+
   /**
    * 
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
+  static #create_pokemon_abilities_list_seciton(main_div, pokemon_data) {
 
     const pokemon_abilities = pokemon_data.abilities
 
@@ -147,7 +161,7 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida 
    * @param {JSON} pokemon_data Dados do pokemon
    */
-  static create_pokemon_stat_section(main_div, pokemon_data) {
+  static #create_pokemon_stat_section(main_div, pokemon_data) {
 
     const pokemon_stats = pokemon_data.stats
 
@@ -184,11 +198,12 @@ class CardCreator {
    * @param {HTMLElement} main_div Div principal onde a section vai ser inserida
    * @param {JSON} pokemon_data Dados do pokemon 
    */
-  static create_pokemon_image_section(main_div, pokemon_data) {
+  static #create_pokemon_image_section(main_div, pokemon_data) {
 
     const pokemon = {
       name: pokemon_data.name,
-      sprites: pokemon_data.sprites.other.home.front_default
+      sprites: pokemon_data.sprites.other.home.front_default,
+      shiny_sprites: pokemon_data.sprites.other.home.front_shiny
     }
 
     const section = this.#generate_element("section", {
@@ -221,7 +236,32 @@ class CardCreator {
 
 
     //função que vai criar a section dos tipos e inserir no html como filho da section atual
+
     this.create_pokemon_type_section(section, pokemon_data)
+
+
+    const shiny_btn = this.#generate_element("button", {
+      class: "shiny_btn"
+    }, section)
+
+    shiny_btn.innerText = "Mostrar versão shiny"
+
+    shiny_btn.addEventListener("click", () => {
+      this.show_shiny_version_section(main_img, pokemon)
+
+      let current_version = main_img
+
+      if (current_version.src == pokemon.shiny_sprites) {
+        shiny_btn.innerText = "Mostrar versão normal"
+      } else {
+        shiny_btn.innerText = "Mostrar versão shiny"
+      }
+
+    })
+
+    change_color_mode_btn.addEventListener("click", () => {
+      change_color_mode(main_img)
+    })
 
   }
 
